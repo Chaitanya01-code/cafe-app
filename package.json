@@ -1,0 +1,12 @@
+{
+  "name": "build-a-app-for-cafe-to",
+  "version": "1.0.0",
+  "description": "Cafe ordering app with backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  }
+}

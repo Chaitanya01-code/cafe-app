@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew & Bite Cafe Ordering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="order-panel" aria-label="Cafe menu ordering">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Brew & Bite</p>
+            <h1>Order food and coffee</h1>
+          </div>
+          <button class="icon-button cart-jump" type="button" aria-label="Open cart">
+            <span aria-hidden="true">🧾</span>
+            <span id="cart-count">0</span>
+          </button>
+        </header>
+
+        <div class="service-strip" aria-label="Order type">
+          <label>
+            <input type="radio" name="service" value="Dine in" checked />
+            <span>Dine in</span>
+          </label>
+          <label>
+            <input type="radio" name="service" value="Takeaway" />
+            <span>Takeaway</span>
+          </label>
+          <label>
+            <input type="radio" name="service" value="Pickup" />
+            <span>Pickup</span>
+          </label>
+        </div>
+
+        <section class="featured-item" aria-label="Featured cafe item">
+          <div class="featured-copy">
+            <p>Morning favorite</p>
+            <h2>Honey oat latte + warm croissant</h2>
+            <button type="button" data-featured>Quick add combo</button>
+          </div>
+          <div class="featured-art" aria-hidden="true">
+            <div class="plate"></div>
+            <div class="cup"></div>
+            <div class="steam one"></div>
+            <div class="steam two"></div>
+            <div class="croissant"></div>
+          </div>
+        </section>
+
+        <nav class="category-tabs" aria-label="Menu categories">
+          <button class="active" type="button" data-category="All">All</button>
+          <button type="button" data-category="Coffee">Coffee</button>
+          <button type="button" data-category="Food">Food</button>
+          <button type="button" data-category="Dessert">Dessert</button>
+        </nav>
+
+        <section>
+          <div class="section-heading">
+            <h2>Menu</h2>
+            <span id="menu-summary">12 items</span>
+          </div>
+          <div class="menu-grid" id="menu-grid"></div>
+        </section>
+      </section>
+
+      <aside class="cart-panel" aria-label="Current order">
+        <div class="cart-header">
+          <div>
+            <p class="eyebrow">Your order</p>
+            <h2>Cart</h2>
+          </div>
+          <button class="text-button" id="clear-cart" type="button">Clear</button>
+        </div>
+
+        <div class="cart-items" id="cart-items"></div>
+
+        <form class="checkout-form" id="checkout-form">
+          <label>
+            Customer name
+            <input id="customer-name" type="text" placeholder="Your name" required />
+          </label>
+          <label>
+            Notes
+            <textarea id="order-notes" placeholder="Less sugar, extra napkins..."></textarea>
+          </label>
+
+          <div class="totals" aria-live="polite">
+            <div>
+              <span>Subtotal</span>
+              <strong id="subtotal">$0.00</strong>
+            </div>
+            <div>
+              <span>Service tax</span>
+              <strong id="tax">$0.00</strong>
+            </div>
+            <div class="grand-total">
+              <span>Total</span>
+              <strong id="total">$0.00</strong>
+            </div>
+          </div>
+
+          <button class="checkout-button" type="submit">Place order</button>
+        </form>
+
+        <div class="order-success" id="order-success" role="status" aria-live="polite"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
